@@ -3,11 +3,19 @@
 I wanted to have a simple app that can convert a *magnet link* to a *.torrent* file easily.
 Decided to go with Slim PHP for the backend as this application will require little added logic, and no database.
 
+## Learnings
+
+- Getting to know **Slim PHP** (no previous experience with the framework)
+- Learn how to integrate templating (**twig**)
+- Make a dockerized development environment with **Apache** (usually using Nginx)
+
+## Usage
+
 ### Install Docker
 
 To get started, make sure you have Docker installed on your system, and then clone this repository.
 
-### Create a Laravel app
+### Create a Slim app
 
 Creating a new Slim PHP application is handled by spinning up a Composer Docker container to generate it.
 Find the details about slim applications on the [Slim Framework documentation site](https://www.slimframework.com/docs/v4/start/installation.html).
@@ -15,7 +23,7 @@ Find the details about slim applications on the [Slim Framework documentation si
 ```sh
 docker-compose run --rm composer require slim/slim:"4.*" guzzlehttp/psr7 http-interop/http-factory-guzzle
 ```
-Because containers are run as `root` in base Docker containers, the files created by  the composer script are owned by `root`. To allow local editing of the Laravel application files, change the owner of the files to the current user:
+Because containers are run as `root` in base Docker containers, the files created by  the composer script are owned by `root`. To allow local editing of the Slim application files, change the owner of the files to the current user:
 ```sh
 sudo chown -R $USER:$USER .
 ```
@@ -38,4 +46,7 @@ Containers created and their ports (if used) are as follows:
 - **composer**
 - **phpunit**
 
-### Troubleshooting
+### Resources
+
+- [Slim PHP documentation](https://www.slimframework.com/docs/v4/)
+- [How to add twig views to your Slim application](https://stackoverflow.com/questions/57471005/how-to-add-twig-view-in-slimframework-v4)
