@@ -8,6 +8,12 @@ steps:
   - cd api/
   - composer install
 
+- name: lint
+  image: php:8
+  commands:
+  - cd api/
+  - vendor/bin/phpcs --standard=ruleset.xml src/
+
 - name: test
   image: php:8
   commands:
