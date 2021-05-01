@@ -10,6 +10,8 @@ require __DIR__ . '/vendor/autoload.php';
 
 $app = AppFactory::create();
 
+$app->addErrorMiddleware(true, true, false);
+
 $app->get('/', function (Request $request, Response $response, $args) {
     $response->getBody()->write("Hello world!");
     return $response;
