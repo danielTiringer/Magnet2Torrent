@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <h2 class="text-center">Your .torrent file is ready.</h2>
+    <p class="text-center">Click on the button below to download it.</p>
+
+    <div class="row justify-content-center">
+        <a href="{{ torrent_url }}" class="mx-3">
+            <button class="btn btn-primary"><i class="fa fa-download"></i> Download</button>
+        </a>
+        <a href="{{ url_for('index') }}" class="mx-3">
+            <button class="btn btn-primary">Convert again</button>
+        </a>
+    </div>
+
+{% endblock %}
