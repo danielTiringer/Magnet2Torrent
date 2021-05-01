@@ -1,1 +1,5 @@
+# Composer related
 vendor/
+
+# PHPUnit related
+*.phpunit.result.cache
