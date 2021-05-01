@@ -12,7 +12,11 @@ steps:
   image: php:8
   commands:
   - cd api/
-  - vendor/bin/phpcs --standard=ruleset.xml src/
+  - vendor/bin/phpcs --standard=PSR12 config/
+  - vendor/bin/phpcs --standard=PSR12 public/
+  - vendor/bin/phpcs --standard=PSR12 src/
+  - vendor/bin/phpcs --standard=PSR12 templates/
+  - vendor/bin/phpcs --standard=PSR12 tests/
 
 - name: test
   image: php:8

@@ -10,9 +10,14 @@ use PHPUnit\Framework\TestCase;
 class WebmasterApiClientTest extends TestCase
 {
     /**
+     * Tests the behavior of the fetchTorrentLink function
+     *
      * @param string $returnJSON
-     * @param array $expectedResult
+     * @param array  $expectedResult
+     *
      * @dataProvider fetchTorrentLinkDataProvider
+     *
+     * @return void
      */
     public function testFetchTorrentLink($returnJSON, $expectedResult)
     {
