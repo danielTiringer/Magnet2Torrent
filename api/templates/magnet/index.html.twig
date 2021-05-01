@@ -6,7 +6,15 @@
     <p class="text-center">It can be converted into a downloadable .torrent file through a hash value or a complete magnet link.</p>
 
     <form method="POST" action="{{ url_for('convert') }}">
-        <div class="form-group {% if errors.magnet %}has-error{% endif %}">
+        <div class="form-group">
+
+            {% for error in errors %}
+                <div class="alert alert-danger alert-dismissible fade show">
+                    <strong>Warning!</strong> {{ error }}.
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                </div>
+            {% endfor %}
+
             <label class="control-label" for="magnet">Magnet Link</label>
             <input type="text" class="form-control" id="magnet" name="magnet" placeholder="Insert the magnet link here...">
         </div>
