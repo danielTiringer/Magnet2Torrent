@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <h2 class="text-center">Converting the magnet was not successful!</h2>
+    <p class="text-center">{{ error }}</p>
+
+    <div class="row justify-content-center">
+        <a href="{{ url_for('index') }}" class="mx-3">
+            <button class="btn btn-primary">Try again</button>
+        </a>
+    </div>
+
+{% endblock %}
