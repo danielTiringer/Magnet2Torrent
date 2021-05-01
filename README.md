@@ -1,5 +1,7 @@
 # Simple Magnet-2-Torrent client based on an API
 
+[![Build Status](https://cloud.drone.io/api/badges/danielTiringer/Magnet2Torrent/status.svg)](https://cloud.drone.io/danielTiringer/Magnet2Torrent)
+
 I wanted to have a simple app that can convert a *magnet link* to a *.torrent* file easily.
 Decided to go with Slim PHP for the backend as this application will require little added logic, and no database.
 
