@@ -1,7 +1,7 @@
 <?php
 
-use App\Magnet\MagnetConvert;
-use App\Magnet\MagnetIndex;
+use App\Magnet\MagnetConvertAction;
+use App\Magnet\MagnetIndexAction;
 
-$app->get('/', MagnetIndex::class)->setName('index');
-$app->post('/', MagnetConvert::class)->setName('convert');
+$app->get('/', MagnetIndexAction::class)->setName('index');
+$app->post('/', MagnetConvertAction::class)->setName('convert');
