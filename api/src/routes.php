@@ -1,10 +1,5 @@
 <?php
 
-use Psr\Http\Message\ResponseInterface as Response;
-use Psr\Http\Message\ServerRequestInterface as Request;
-use Slim\Views\Twig;
+use App\Magnet\MagnetIndex;
 
-$app->map(['GET', 'POST'], '/', function (Request $request, Response $response, $args) {
-    $view = Twig::fromRequest($request);
-    return $view->render($response, 'magnet/index.html.twig');
-})->setName('index');
+$app->get('/', MagnetIndex::class)->setName('index');
