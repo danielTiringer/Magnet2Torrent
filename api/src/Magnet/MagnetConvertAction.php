@@ -11,7 +11,8 @@ use Slim\Views\Twig;
 
 class MagnetConvertAction
 {
-    public function __invoke(Request $request, Response $response, $args) {
+    public function __invoke(Request $request, Response $response, $args)
+    {
         $data = $request->getParsedBody();
 
         $httpClient = new Client();
@@ -21,13 +22,21 @@ class MagnetConvertAction
         $view = Twig::fromRequest($request);
 
         if ($apiResponse['code'] === 1) {
-            return $view->render($response, 'magnet/download.html.twig', [
-                'torrent_url' => $apiResponse['results'],
-            ]);
+            return $view->render(
+                $response,
+                'magnet/download.html.twig',
+                [
+                    'torrent_url' => $apiResponse['results'],
+                ]
+            );
         } else {
-            return $view->render($response, 'magnet/error.html.twig', [
-                'error' => $apiResponse['error'],
-            ]);
+            return $view->render(
+                $response,
+                'magnet/error.html.twig',
+                [
+                    'error' => $apiResponse['error'],
+                ]
+            );
         }
 
     }

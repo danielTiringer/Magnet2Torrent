@@ -8,7 +8,8 @@ use Slim\Views\Twig;
 
 class MagnetIndexAction
 {
-    public function __invoke(Request $request, Response $response, $args) {
+    public function __invoke(Request $request, Response $response, $args)
+    {
         $view = Twig::fromRequest($request);
         return $view->render($response, 'magnet/index.html.twig');
     }
