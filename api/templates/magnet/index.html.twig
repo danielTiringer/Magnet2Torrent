@@ -5,4 +5,14 @@
     <h2 class="text-center">Convert Magnet file to Torrent file</h2>
     <p class="text-center">It can be converted into a downloadable .torrent file through a hash value or a complete magnet link.</p>
 
+    <form method="POST" action="{{ url_for('index') }}">
+        <div class="form-group {% if errors.magnet %}has-error{% endif %}">
+            <label class="control-label" for="magnet">Magnet Link</label>
+            <input type="text" class="form-control" id="magnet" name="magnet" placeholder="Insert the magnet link here...">
+        </div>
+        <div class=text-center>
+            <button type="submit" class="btn btn-primary">Start Convert</button>
+        </div>
+    </form>
+
 {% endblock %}
