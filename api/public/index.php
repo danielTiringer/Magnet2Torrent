@@ -2,8 +2,6 @@
 
 declare(strict_types=1);
 
-use Psr\Http\Message\ResponseInterface as Response;
-use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\Factory\AppFactory;
 use Slim\Views\Twig;
 use Slim\Views\TwigMiddleware;
@@ -25,9 +23,6 @@ $twig = Twig::create(
 );
 $app->add(TwigMiddleware::create($app, $twig));
 
-$app->get('/', function (Request $request, Response $response, $args) {
-    $view = Twig::fromRequest($request);
-    return $view->render($response, 'magnet/index.html.twig');
-})->setName('index');
+require 'src/routes.php';
 
 $app->run();
