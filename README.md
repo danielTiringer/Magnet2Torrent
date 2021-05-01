@@ -10,6 +10,8 @@ Decided to go with Slim PHP for the backend as this application will require lit
 - Getting to know **Slim PHP** (no previous experience with the framework)
 - Learn how to integrate templating (**twig**)
 - Make a dockerized development environment with **Apache** (usually using Nginx)
+- Use various features (e.g. form validation)
+- Set up a CI/CD pipeline in **drone.io**
 
 ## Usage
 
