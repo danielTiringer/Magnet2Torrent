@@ -22,7 +22,7 @@ $app->add(TwigMiddleware::create($app, $twig));
 
 $app->get('/', function (Request $request, Response $response, $args) {
     $view = Twig::fromRequest($request);
-    return $view->render($response, 'main.twig');
+    return $view->render($response, 'magnet/index.html.twig');
 });
 
 $app->run();
