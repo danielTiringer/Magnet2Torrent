@@ -4,10 +4,10 @@ services:
   php:
     build:
       context: ./docker/php
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.dev
       args:
         PHP_VERSION: ${PHP_VERSION}
-    container_name: slim-api
+    container_name: slim-app
     env_file:
       - .env
     volumes:
@@ -28,6 +28,7 @@ services:
 
   phpunit:
     image: php:8.0-cli-alpine3.12
+    container_name: slim-phpunit
     volumes:
       - ./api:/var/www/html
     working_dir: /var/www/html
