@@ -8,7 +8,8 @@ class WebmasterApiClient
 {
     private const API_BASE_URL = 'https://api.webmasterapi.com/v1/magnet2torrent';
 
-    private ClientInterface $httpClient;
+    /** @var ClientInterface */
+    private $httpClient;
 
     public function __construct(ClientInterface $httpClient)
     {
